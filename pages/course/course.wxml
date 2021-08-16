@@ -1,0 +1,66 @@
+<!--pages/course/course.wxml-->
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">课程列表</view>
+</cu-custom>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="搜索感兴趣的课程……" confirm-type="search"></input>
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-blue shadow-blur round">搜索</button>
+    </view>
+</view>
+<view class="text-center margin-top"></view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action"><text class="cuIcon-title text-red">热门课程</text></view>
+</view>
+<view class="cu-list menu-avatar">
+  <block wx:for="{{hotCourse}}" wx:key="index">
+    <view class="cu-item cur" bindtap="_handleToHotCourse" id="{{index}}">
+      <view class="cu-avatar radius lg" style="background-image:url({{item.courseInfo.imageList[0]}});">
+        <image src="{{item.courseInfo.imageList[0]}}" mode="aspectFill" class="courseShow cu-avatar radius lg"></image>
+      </view>
+      <view class="content">
+        <view>
+          <text class="text-cut">{{item.courseInfo.title}}</text>
+          <view class="cu-tag round bg-orange sm">{{item.courseInfo.studentList.length}}人</view>
+        </view>
+        <!-- <view class="text-gray text-sm flex">
+          <text class="text-cut">{{item.courseInfo.courseInfo.teacher}}</text>
+        </view> -->
+      </view>
+    </view>
+  </block>
+</view>
+<view class="text-center margin-top"></view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action"><text class="cuIcon-title text-green">推荐课程</text></view>
+</view>
+<view class="cu-list menu-avatar">
+  <block wx:for="{{recommmandCourse}}" wx:key="index">
+    <view class="cu-item cur" bindtap="_handleToRecCourse" id="{{index}}">
+      <view class="cu-avatar radius lg" style='background-image:url("{{item.courseInfo.imageList[0]}}")'>
+        <image src="{{item.courseInfo.imageList[0]}}" mode="aspectFill" class="courseShow"></image>
+      </view>
+      <view class="content">
+        <view>
+          <text class="text-cut">{{item.courseInfo.title}}</text>
+          <view class="cu-tag round bg-orange sm">{{item.courseInfo.studentList.length}}人</view>
+        </view>
+        <!-- <view class="text-gray text-sm flex">
+          <text class="text-cut">{{item.courseInfo.teacher}}</text>
+        </view> -->
+      </view>
+    </view>
+  </block>
+</view>
+<view class="text-center margin-top"></view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action"><text class="cuIcon-title">全部课程</text></view>
+</view>
+<view class="margin-xs padding bg-white radius shadow shadow-lg flex flex-wrap">
+  <view class="basis-lg text-center t-position"><text class="text-black text-bold">点击查看全部课程</text></view>
+</view>

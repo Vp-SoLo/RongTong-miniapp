@@ -1,0 +1,8 @@
+/* pages/myCourse/myCourse.wxss */
+.myButton{
+  position: fixed;
+  top: 90%;
+  left: 14%;
+  width: 550rpx;
+  height: 100rpx;
+}

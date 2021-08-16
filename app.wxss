@@ -1,0 +1,47 @@
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+@font-face {
+  font-family: "iconfont"; /* Project id 2643789 */
+  src: url('//at.alicdn.com/t/font_2643789_zkql10ag7qm.woff2?t=1625065339981') format('woff2'),
+       url('//at.alicdn.com/t/font_2643789_zkql10ag7qm.woff?t=1625065339981') format('woff'),
+       url('//at.alicdn.com/t/font_2643789_zkql10ag7qm.ttf?t=1625065339981') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon-test6:before {
+  content: "\e64f";
+}
+
+.icon-icon-test1:before {
+  content: "\e635";
+}
+
+.icon-icon-test2:before {
+  content: "\e63a";
+}
+
+.icon-icon-test3:before {
+  content: "\e63d";
+}
+
+.icon-icon-test4:before {
+  content: "\e64d";
+}
+
+.icon-icon-test5:before {
+  content: "\e64e";
+}
+
+.icon-icon-test:before {
+  content: "\e638";
+}
+.t-position{
+  position: relative;
+}

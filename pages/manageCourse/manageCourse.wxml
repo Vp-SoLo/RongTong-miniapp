@@ -1,0 +1,31 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">课程信息</view>
+</cu-custom>
+<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key="index">
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-pink"></text> 课程介绍
+  </view>
+</view>
+<view class="padding-xl bg-white radius shadow shadow-lg" style="width: 750rpx; height: 284rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">
+{{tempCourseInfo.courseInfo.intro}}
+</view>
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-pink"></text> 开课教师
+  </view>
+</view>
+<view class="padding-xl bg-white radius shadow shadow-lg" style="width: 750rpx; height: 0rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">
+<text class="t-position" style="position: relative; left: -2rpx; top: -30rpx">{{tempCourseInfo._openid}}</text>
+</view>
+<view class="cu-bar btn-group">
+  <button class="cu-btn bg-green shadow-blur round lg" bindtap="_handleAdjustIntro">修改展示</button>
+  <button class="cu-btn bg-green shadow-blur round lg" bindtap="_handleLookStudentList">查看学员</button>
+  <button class="cu-btn bg-green shadow-blur round lg" bindtap="_handleManageCourseContent">管理内容</button>
+</view>

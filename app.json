@@ -1,0 +1,57 @@
+{
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "1296db",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/assets/images/首页.png",
+        "selectedIconPath": "/assets/images/首页.png"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "text": "课程",
+        "iconPath": "/assets/images/消息.png",
+        "selectedIconPath": "/assets/images/消息.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "/assets/images/我的.png",
+        "selectedIconPath": "/assets/images/我的.png"
+      }
+    ]
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/course/course",
+    "pages/courseContent/courseContent",
+    "pages/teacherContent/teacherContent",
+    "pages/resume/resume",
+    "pages/myCourse/myCourse",
+    "pages/addCourse/addCourse",
+    "pages/feedback/feedback",
+    "pages/chatroom/chatroom",
+    "pages/manageCourse/manageCourse",
+    "pages/courseDetail/courseDetail",
+    "pages/studentList/studentList",
+    "pages/teacherCourseList/teacherCourseList",
+    "pages/manageCourseDetail/manageCourseDetail",
+    "pages/manageCourseDetail/addContent/addContent",
+    "pages/manageCourseDetail/addChapter/addChapter",
+    "pages/courseDetail/learn/learn"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

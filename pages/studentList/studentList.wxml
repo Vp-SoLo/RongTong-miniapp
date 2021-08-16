@@ -1,0 +1,17 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">学员列表</view>
+</cu-custom>
+<view class="text-center margin-top"></view>
+<view class="cu-list menu-avatar">
+<block wx:for="{{studentList}}" wx:key="index">
+  <view class="cu-item" id="{{index}}">
+      <view class="cu-avatar round lg" style="background-image:url({{item.image}});">
+        <image src="{{item.avatar}}" mode="aspectFill" class="courseShow cu-avatar round lg"></image>
+      </view>
+      <view class="content">
+        <view class="text-grey">{{item.nickName}}</view>
+      </view>
+  </view>
+</block>
+</view>

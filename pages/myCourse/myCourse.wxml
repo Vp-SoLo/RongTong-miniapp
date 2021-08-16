@@ -1,0 +1,53 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">我的课程</view>
+</cu-custom>
+<block wx:if="{{resume.identify == '教师'}}">
+<view class="cu-bar bg-white">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text> 我开设的课程
+  </view>
+</view>
+<block wx:for="{{myCourse}}" wx:key="index">
+  <view class="cu-card article" bindtap="_handleToManageCourse" id="{{index}}">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="text-cut">{{item.courseInfo.title}}</view>
+    </view>
+    <view class="content">
+      <image src="{{item.courseInfo.imageList[0]}}" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content"> {{item.courseInfo.intro}}</view>
+      </view>
+    </view>
+  </view>
+  </view>
+</block>
+<view class="myButton" bindtap="_handleAdd">
+  <view class="cu-bar btn-group">
+    <button class="cu-btn bg-green shadow-blur round lg">发布新课程</button>
+  </view>
+</view>
+</block>
+<block wx:if="{{resume.identify == '普通用户'}}">
+<view class="cu-bar bg-white">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text> 我参加的课程
+  </view>
+</view>
+<block wx:for="{{myCourse}}" wx:key="index">
+  <view class="cu-card article" bindtap="_handleToCourse" id="{{index}}">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="text-cut">{{item.courseInfo.title}}</view>
+    </view>
+    <view class="content">
+      <image src="{{item.courseInfo.imageList[0]}}" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content"> {{item.courseInfo.intro}}</view>
+      </view>
+    </view>
+  </view>
+  </view>
+</block>
+</block>

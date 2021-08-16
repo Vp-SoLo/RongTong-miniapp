@@ -1,0 +1,99 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">个人中心</view>
+</cu-custom>
+<block wx:if="{{isLogged}}">
+<view class="text-center margin-top"></view>
+<view class="margin-xs padding bg-white radius shadow shadow-lg personal-main" style="width: 750rpx; height: 196rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">
+  <view class="personal-main-head flex margin-bottom-xl">
+    <view class="cu-avatar xl round " style="background-image:url({{userInfo.avatarUrl}});"></view>
+    <view class="info margin-left-xs padding-0 grid col-1 margin-bottom" style="position: relative; left: 10rpx; top: 11rpx">
+      <view>
+        <text class="text-black text-bold">{{userInfo.nickName}}</text>
+      </view>
+      <view class="text-center margin-top"></view>
+      <view>
+        <text class="cuIcon-profile lg text-black text-bold">未认证</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="margin-xs padding-xs bg-white radius shadow shadow-lg flex flex-wrap" bindtap="_handleMyCourse">
+  <view class="basis-xs"><text class="iconfont icon-icon-test6" style="position: relative; left: 16rpx; top: -2rpx"></text></view>
+  <view class="basis-lg text-center t-position"><text class="text-black  t-position" style="position: relative; left: -166rpx; top: 16rpx">我的课程</text></view>
+  <view class="basis-xs t-position" style="width: 64rpx; height: 70rpx; display: block; box-sizing: border-box; left: -1rpx; top: 0rpx; position: relative"><text class="t-position" style="position: relative; left: 74rpx; top: 20rpx">></text></view>
+</view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="margin-xs padding-xs bg-white radius shadow shadow-lg flex flex-wrap" bindtap="_handleChat">
+  <view class="basis-xs"><text class="iconfont icon-icon-test1" style="position: relative; left: 20rpx; top: 0rpx"></text></view>
+  <view class="basis-lg text-center t-position" style="position: relative; left: -2rpx; top: 0rpx"><text class="text-black  t-position" style="position: relative; left: -176rpx; top: 16rpx">站内信</text></view>
+  <view class="basis-xs t-position" style="width: 64rpx; height: 70rpx; display: block; box-sizing: border-box; left: -1rpx; top: 0rpx; position: relative"><text class="t-position" style="position: relative; left: 74rpx; top: 20rpx">></text></view>
+</view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="margin-xs padding-xs bg-white radius shadow shadow-lg flex flex-wrap" bindtap="_handleResume">
+  <view class="basis-xs"><text class="iconfont icon-icon-test2" style="position: relative; left: 16rpx; top: -4rpx"></text></view>
+  <view class="basis-lg text-center t-position"><text class="text-black  t-position" style="position: relative; left: -164rpx; top: 15rpx">我的简历</text></view>
+  <view class="basis-xs t-position" style="width: 64rpx; height: 70rpx; display: block; box-sizing: border-box; left: -1rpx; top: 0rpx; position: relative"><text class="t-position" style="position: relative; left: 74rpx; top: 20rpx">></text></view>
+</view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="margin-xs padding-xs bg-white radius shadow shadow-lg flex flex-wrap" bindtap="_handleReview">
+  <view class="basis-xs"><text class="iconfont icon-icon-test3" style="position: relative; left: 16rpx; top: -2rpx"></text></view>
+  <view class="basis-lg text-center t-position"><text class="text-black  t-position" style="position: relative; left: -166rpx; top: 12rpx">我的评分</text></view>
+  <view class="basis-xs t-position" style="width: 64rpx; height: 70rpx; display: block; box-sizing: border-box; left: -1rpx; top: 0rpx; position: relative"><text class="t-position" style="position: relative; left: 74rpx; top: 20rpx">></text></view>
+</view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="margin-xs padding-xs bg-white radius shadow shadow-lg flex flex-wrap" bindtap="_handleHistory">
+  <view class="basis-xs" style="width: 58rpx; height: 70rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"><text class="iconfont icon-icon-test" style="position: relative; left: 16rpx; top: -2rpx"></text></view>
+  <view class="basis-lg text-center t-position"><text class="text-black  t-position" style="position: relative; left: -166rpx; top: 12rpx">培训记录</text></view>
+  <view class="basis-xs t-position" style="width: 64rpx; height: 70rpx; display: block; box-sizing: border-box; left: -1rpx; top: 0rpx; position: relative"><text class="t-position" style="position: relative; left: 74rpx; top: 20rpx">></text></view>
+</view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="margin-xs padding-xs bg-white radius shadow shadow-lg flex flex-wrap" bindtap="_handleFeedback">
+  <view class="basis-xs"><text class="iconfont icon-icon-test4" style="position: relative; left: 16rpx; top: -2rpx"></text></view>
+  <view class="basis-lg text-center t-position"><text class="text-black  t-position" style="position: relative; left: -158rpx; top: 16rpx">举报与反馈</text></view>
+  <view class="basis-xs t-position" style="width: 64rpx; height: 70rpx; display: block; box-sizing: border-box; left: -1rpx; top: 0rpx; position: relative"><text class="t-position" style="position: relative; left: 74rpx; top: 20rpx">></text></view>
+</view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="margin-xs padding bg-white radius shadow shadow-lg flex flex-wrap" bindtap="_handleLogout">
+  <view class="basis-lg text-center t-position"><text class="text-black text-bold">退出绑定</text></view>
+  <view class="basis-xs t-position"><text>(微信账号)</text></view>
+</view>
+</block>
+<block wx:if="{{!isLogged}}">
+<view class="text-center margin-top"></view>
+<view class="margin-xs padding bg-white radius shadow shadow-lg personal-main" style="width: 750rpx; height: 196rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx" bindtap="_handleLoginOrReg">
+  <view class="personal-main-head flex margin-bottom-xl">
+    <view class="cu-avatar xl round margin-left bg-red">?</view>
+    <view class="info margin-left-xs padding-0 grid col-1 margin-bottom" style="position: relative; left: 10rpx; top: 11rpx">
+      <view>
+        <text class="text-black text-bold">未登录，点击注册或者登录</text>
+      </view>
+      <view class="text-center margin-top"></view>
+      <view>
+        <text class="cuIcon-profile lg text-black text-bold">未登录</text>
+      </view>
+    </view>
+  </view>
+</view>
+</block>

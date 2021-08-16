@@ -1,0 +1,5 @@
+/* pages/user/user.wxss */
+.iconfont{
+  position: relative;
+  font-size:xx-large;
+}

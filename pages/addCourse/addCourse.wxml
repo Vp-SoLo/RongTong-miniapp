@@ -1,0 +1,54 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">添加新课程</view>
+</cu-custom>
+<form bindsubmit="_handleSubmitCourse">
+  <view class="cu-form-group">
+		<view class="title">课程名称</view>
+		<input placeholder="请输入" name="title"></input>
+	</view>
+	<view class="cu-form-group margin-top">
+		<view class="title">开始日期</view>
+		<picker mode="date" value="{{startDate}}" start="1900-01-01" end="2099-01-01" bindchange="startDateChange">
+			<view class="picker">
+				{{startDate}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group margin-top">
+		<view class="title">截止日期</view>
+		<picker mode="date" value="{{endDate}}" start="1900-01-01" end="2099-01-01" bindchange="endDateChange">
+			<view class="picker">
+				{{endDate}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-bar bg-white margin-top">
+		<view class="action">
+			课程图片上传
+		</view>
+		<view class="action">
+			{{imgList.length}}/4
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+	<!-- !!!!! placeholder 在ios表现有偏移 建议使用 第一种样式 -->
+	<view class="cu-form-group margin-top">
+		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入课程描述……"></textarea>
+	</view>
+  <view class="cu-bar btn-group">
+    <button class="cu-btn bg-green shadow-blur round lg" form-type="submit">提交</button>
+  </view>
+</form>

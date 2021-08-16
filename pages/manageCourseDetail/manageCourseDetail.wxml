@@ -1,0 +1,42 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">管理课程内容</view>
+</cu-custom>
+<view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      <text class="cuIcon-title text-red "></text> 课程名称
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-green shadow" bindtap="_handleAddChapter">增加章</button>
+    </view>
+</view>
+<block wx:for="{{chapterTile}}" wx:key="index" wx:for-item="chpitem">
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text> {{chpitem}}
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-green shadow" bindtap="_handleAddSub" id="{{index}}">增加小节</button>
+    </view>
+</view>
+<block wx:for="{{chapterDetail[index]}}" wx:key="index">
+  <view class="cu-list menu margin-my">
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-btn text-green"></text>
+        <text class="text-grey">{{item}}</text>
+      </view>
+      <view class="action" bindtap="_handleAddContent" id="{{chpitem+'^'+index}}">
+        <button class="cu-btn round bg-green shadow">
+          <text class="cuIcon-upload"></text> 设置内容</button>
+      </view>
+    </view>
+</view>
+</block>
+</block>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="cu-bar btn-group">
+  <button class="cu-btn bg-green shadow-blur round lg" bindtap="_handleSubmit">提交内容</button>
+  <button class="cu-btn bg-red shadow-blur round lg" bindtap="_handleCancel">取消全部操作</button>
+</view>

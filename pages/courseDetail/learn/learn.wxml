@@ -1,0 +1,11 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">卡片</view></cu-custom>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<view class="text-center margin-top"></view>
+<block wx:if="{{courseContent[0]=='text'}}">
+  <view class=" bg-white solid-bottom padding">{{courseContent[1]}}</view>
+</block>
+<block wx:if="{{courseContent[0]=='img'}}">
+  <image src='{{courseContent[1]}}' mode='widthFix' class='png' style='width:100%;height:486rpx'></image>
+</block>

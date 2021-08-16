@@ -1,0 +1,42 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "进入",
+          "pathName": "pages/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/manageCourseDetail/manageCourseDetail",
+          "pathName": "pages/manageCourseDetail/manageCourseDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/manageCourseDetail/addContent/addContent",
+          "pathName": "pages/manageCourseDetail/addContent/addContent",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/courseDetail/courseDetail",
+          "pathName": "pages/courseDetail/courseDetail",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

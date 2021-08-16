@@ -1,0 +1,43 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">教师信息</view>
+</cu-custom>
+<view class="cu-bar bg-white">
+    <view class="action border-title">
+      <text class="text-xl text-bold">基本信息</text>
+      <text class="bg-grey" style="width:2rem"></text>
+      <!-- 底部样式 last-child选择器-->
+    </view>
+</view>
+<view class="padding-xs bg-white radius shadow shadow-lg flex flex-wrap">
+  <view class="basis-lg text-center t-position"><text class="text-black t-position text-bold" style="position: relative; left: -166rpx; top: 12rpx">姓名</text></view>
+  <view class="basis-xs t-position" style="width: 64rpx; height: 70rpx; display: block; box-sizing: border-box; left: -248rpx; top: 0rpx; position: relative"><text class="t-position" style="position: relative; left: 6rpx; top: 16rpx">{{detailInfo.realName}}</text></view>
+  <view class="basis-lg text-center t-position"><text class="text-black t-position text-bold" style="position: relative; left: -166rpx; top: 12rpx">毕业学校</text></view>
+  <view class="basis-xs t-position" style="width: 64rpx; height: 70rpx; display: block; box-sizing: border-box; left: -248rpx; top: 0rpx; position: relative"><text class="t-position" style="position: relative; left: 6rpx; top: 16rpx">{{detailInfo.school}}</text></view>
+  <view class="basis-lg text-center t-position"><text class="text-black t-position text-bold" style="position: relative; left: -166rpx; top: 12rpx">专业</text></view>
+  <view class="basis-xs t-position" style="width: 64rpx; height: 70rpx; display: block; box-sizing: border-box; left: -248rpx; top: 0rpx; position: relative"><text class="t-position" style="position: relative; left: 6rpx; top: 16rpx">{{detailInfo.major}}</text></view>
+  <view class="basis-lg text-center t-position"><text class="text-black t-position text-bold" style="position: relative; left: -166rpx; top: 12rpx">主要区域</text></view>
+  <view class="basis-xs t-position" style="width: 64rpx; height: 70rpx; display: block; box-sizing: border-box; left: -248rpx; top: 0rpx; position: relative"><text class="t-position" style="position: relative; left: 6rpx; top: 16rpx">{{detailInfo.mainRegion}}</text></view>
+</view>
+<view class="text-center margin-top"></view>
+<view class="cu-bar bg-white">
+    <view class="action border-title">
+      <text class="text-xl text-bold">详细介绍</text>
+      <text class="bg-grey" style="width:2rem"></text>
+      <!-- 底部样式 last-child选择器-->
+    </view>
+</view>
+<view class="flex  p-xs margin-bottom-sm mb-sm t-position" style="width: 750rpx; height: 230rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
+  <view class="flex-sub bg-white padding-sm margin-xs radius t-position" style="width: 202rpx; height: 211rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">个人简介</view>
+  <view class="flex-twice bg-white padding-sm margin-xs radius t-position">{{detailInfo.intro}}</view>
+</view>
+<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key>
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
+<view class="cu-bar btn-group">
+  <button class="cu-btn bg-green shadow-blur round" bindtap="_handleChat">发送站内信</button>
+  <button class="cu-btn bg-blue shadow-blur round" bindtap="_handleChackCourse">查看开设课程</button>
+</view>

@@ -1,0 +1,4 @@
+/* pages/manageCourseDetail/manageCourseDetail.wxss */
+.margin-my{
+  margin-top: 0px;
+}

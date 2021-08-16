@@ -1,0 +1,5 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">开设课程列表</view>
+</cu-custom>
+<text>功能开发中</text>

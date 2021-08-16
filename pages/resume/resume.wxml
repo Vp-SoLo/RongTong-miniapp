@@ -1,0 +1,95 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">我的简历</view>
+</cu-custom>
+<form bindsubmit="_handleSubmitResume">
+	<view class="cu-form-group margin-top">
+		<view class="title">姓名</view>
+		<input placeholder="请输入" name="realName"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">性别</view>
+		<picker bindchange="genderPickerChange" value="{{genderCurrent}}}" range="{{gender}}">
+			<view class="picker">
+				{{genderCurrent?genderCurrent:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">使用身份</view>
+		<picker bindchange="identifyPickerChange" value="{{identifyCurrent}}" range="{{identify}}">
+			<view class="picker">
+				{{identifyCurrent?identifyCurrent:'请选择'}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">毕业院校</view>
+		<input placeholder="请输入" name="school"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">专业</view>
+		<input placeholder="请输入" name="major"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">主要活动地区</view>
+		<input placeholder="请输入" name="mainRegion"></input>
+		<text class="cuIcon-locationfill text-orange"></text>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">手机号码</view>
+		<input placeholder="暂时只支持中国大陆" name="phone"></input>
+		<view class="cu-capsule radius">
+			<view class="cu-tag bg-blue">
+				+86
+			</view>
+			<view class="cu-tag line-blue">
+				中国大陆
+			</view>
+		</view>
+	</view>
+	<view class="cu-form-group margin-top">
+		<view class="title">出生日期</view>
+		<picker mode="date" value="{{date}}" start="1900-01-01" end="2099-01-01" bindchange="DateChange">
+			<view class="picker">
+				{{date}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">国内居住地址</view>
+		<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+			<view class="picker">
+				{{region[0]}}，{{region[1]}}，{{region[2]}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-bar bg-white margin-top">
+		<view class="action">
+			图片上传
+		</view>
+		<view class="action">
+			{{imgList.length}}/4
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+	<!-- !!!!! placeholder 在ios表现有偏移 建议使用 第一种样式 -->
+	<view class="cu-form-group margin-top">
+		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入个人描述……"></textarea>
+	</view>
+  <view class="cu-bar btn-group">
+    <button class="cu-btn bg-green shadow-blur round lg" form-type="submit">提交</button>
+  </view>
+</form>

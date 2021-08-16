@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "x-chatroom":"/components/chatroom/chatroom"
+  }
+}
